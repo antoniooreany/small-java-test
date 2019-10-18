@@ -1,6 +1,11 @@
 package main.java.com.coder;
 
-public class Main {
+public class TCoder {
+
+    /**
+     * A method for Coder methods testing.
+     * @param args is an arguments from the outside. Does not used here.
+     */
     public static void main(String[] args) {
 
         String e = Coder.encode("e", 5);
@@ -19,6 +24,7 @@ public class Main {
 
         String e7 = Coder.decode("a", 1);
         System.out.println(e7);
+
 
         String e8 = Coder.decode("E", 7);
         System.out.println(e8);
@@ -39,6 +45,33 @@ public class Main {
         String e11 = Coder.decode("IUHUR", 6);
         System.out.println(e11);
 
+        System.out.println("/////////////////////////////////////////////");
 
+//        int shiftAmount = 1 + 26 * 3;
+//        shiftAmount = 98;
+//        System.out.println(shiftAmount);
+//        String e12 = Coder.decode("a", shiftAmount); // 'a' = 97, max = 97
+//        System.out.println(e12);
+
+
+
+
+/////////////////////////////////////////////
+//        Output:
+/////////////////////////////////////////////
+//        j
+//        a
+//        E
+/////////////////////////////////////////////
+//        e
+//        z
+//        X
+/////////////////////////////////////////////
+//        MJQQT
+//        WORLD
+/////////////////////////////////////////////
+//        rwwxFjtn adunb
+//        COBOL
+/////////////////////////////////////////////
     }
 }
