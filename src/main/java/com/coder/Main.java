@@ -8,42 +8,36 @@ public class Main {
 
         String e1 = Coder.encode("z", 1);
         System.out.println(e1);
-//
-//        int rot = 1 + ('z' - 'a' + 1) * 22;
-//        System.out.println(rot);
-//        String e2 = Coder.encode("z", rot);
-//        System.out.println(e2);
-//
-//        int rot_ = 2 + ('z' - 'a' + 1) * 23;
-//        System.out.println(rot_ + "  // char: overflow");
-//        String e2_ = Coder.encode("z", rot_); // char: overflow
-//        System.out.println(e2_ + "  // char: overflow");
-//
+
         String e3 = Coder.encode("X", 7);
         System.out.println(e3);
-//
-//        int rot1 = 7 + ('Z' - 'A' + 1) * 19;
-//        System.out.println(rot1);
-//        String e4 = Coder.encode("X", rot1);
-//        System.out.println(e4);
-//
-//        int _rot1 = 7 + ('Z' - 'A' + 1) * 20;
-//        System.out.println(_rot1 + "    // char: overflow");
-//        String _e4 = Coder.encode("X", _rot1); // char: overflow
-//        System.out.println(_e4 + "    // char: overflow");
-
 
         System.out.println("/////////////////////////////////////////////");
 
-//        String e3 = Coder.encode("X", 7);
-//        System.out.println(e3);
+        String e6 = Coder.decode("j", 5);
+        System.out.println(e6);
 
+        String e7 = Coder.decode("a", 1);
+        System.out.println(e7);
 
+        String e8 = Coder.decode("E", 7);
+        System.out.println(e8);
 
+        System.out.println("/////////////////////////////////////////////");
 
+        String e5 = Coder.encode("HELLO", 5);
+        System.out.println(e5);
 
+        String e9 = Coder.decode("BTWQI", 5);
+        System.out.println(e9);
 
+        System.out.println("/////////////////////////////////////////////");
 
+        String e10 = Coder.encode("innoWake rules", 9);
+        System.out.println(e10);
+
+        String e11 = Coder.decode("IUHUR", 6);
+        System.out.println(e11);
 
 
     }
