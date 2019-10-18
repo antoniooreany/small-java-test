@@ -11,24 +11,24 @@ public class Coder {
         char[] inChars = in.toCharArray();
         char[] outChars = new char[inChars.length];
         for (int i = 0; i < inChars.length; i++) {
-            if ((inChars[i] >= A_LOWER_CASE && inChars[i] <= Z_LOWER_CASE)) {
-                decode(rot, inChars, outChars, i, A_LOWER_CASE, Z_LOWER_CASE);
+            if (inChars[i] >= A_LOWER_CASE && inChars[i] <= Z_LOWER_CASE) {
+                applyEncodeLogic(inChars, outChars, rot, i, A_LOWER_CASE, Z_LOWER_CASE);
+            } else if (inChars[i] >= A_UPPER_CASE && inChars[i] <= Z_UPPER_CASE) {
+                applyEncodeLogic(inChars, outChars, rot, i, A_UPPER_CASE, Z_UPPER_CASE);
             } else {
-                if (inChars[i] >= A_UPPER_CASE && inChars[i] <= Z_UPPER_CASE) {
-                    decode(rot, inChars, outChars, i, A_UPPER_CASE, Z_UPPER_CASE);
-                } else {
-                    outChars[i] = inChars[i];
-                }
+                outChars[i] = inChars[i];
             }
         }
         return new String(outChars);
     }
 
-    private static void decode(int rot, char[] inChars, char[] outChars, int i, char a, char z) {
-        outChars[i] = (char) (inChars[i] + rot);
-        int absoluteOut = outChars[i] - a;
-        int divider = z - a;
-        int threshold = a - absoluteOut / divider;
-        outChars[i] = (char) (threshold + absoluteOut % divider);
+    private static void applyEncodeLogic(char[] inChars, char[] outChars, int rot, int index, char beginChar, char endChar) {
+        outChars[index] = (char) (inChars[index] + rot);
+        int outAbsolute = outChars[index] - beginChar;
+        int divider = endChar - beginChar;
+        int threshold = beginChar - outAbsolute / divider;
+        outChars[index] = (char) (threshold + outAbsolute % divider);
     }
+
+
 }
