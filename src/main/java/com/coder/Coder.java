@@ -1,5 +1,7 @@
 package main.java.com.coder;
 
+import main.java.com.coder.utils.CDoublyLinkedList;
+
 class Coder {
 
     /**
@@ -9,6 +11,21 @@ class Coder {
     private static final char Z_LOWER_CASE = 'z';
     private static final char A_UPPER_CASE = 'A';
     private static final char Z_UPPER_CASE = 'Z';
+    private CDoublyLinkedList<Character> lowerCaseChars;
+    private CDoublyLinkedList<Character> upperCaseChars;
+
+    public void charsInit() {
+        lowerCaseChars = new CDoublyLinkedList<>();
+        upperCaseChars = new CDoublyLinkedList<>();
+
+        for (char c = A_LOWER_CASE; c <= Z_LOWER_CASE; c++) {
+            lowerCaseChars.add(c);
+        }
+
+        for (char c = A_UPPER_CASE; c <= Z_UPPER_CASE; c++) {
+            upperCaseChars.add(c);
+        }
+    }
 
     /**
      * Encodes an inputString by shifting backwards all the values of the char(inputString).
@@ -30,6 +47,12 @@ class Coder {
             }
         }
         return new String(outputChars);
+
+
+
+
+
+
     }
 
     /**
