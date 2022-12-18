@@ -21,15 +21,20 @@ class Coder {
         char[] inputChars = inputString.toCharArray();
         char[] outputChars = new char[inputChars.length];
         for (int i = 0; i < inputChars.length; i++) {
-            if (inputChars[i] >= A_LOWER_CASE && inputChars[i] <= Z_LOWER_CASE) {
-                outputChars[i] = applyCodeLogic(inputChars[i], shiftAmount, A_LOWER_CASE, Z_LOWER_CASE);
-            } else if (inputChars[i] >= A_UPPER_CASE && inputChars[i] <= Z_UPPER_CASE) {
-                outputChars[i] = applyCodeLogic(inputChars[i], shiftAmount, A_UPPER_CASE, Z_UPPER_CASE);
-            } else {
-                outputChars[i] = inputChars[i];
-            }
+            checkBorderConditions(shiftAmount, inputChars, outputChars, i);
         }
         return new String(outputChars);
+    }
+
+    //TODO: Remove inputChars and outputChars as parameters
+    private static void checkBorderConditions(int shiftAmount, char[] inputChars, char[] outputChars, int i) {//TODO rename
+        if (inputChars[i] >= A_LOWER_CASE && inputChars[i] <= Z_LOWER_CASE) {
+            outputChars[i] = applyConstantShifting(inputChars[i], shiftAmount, A_LOWER_CASE, Z_LOWER_CASE);
+        } else if (inputChars[i] >= A_UPPER_CASE && inputChars[i] <= Z_UPPER_CASE) {
+            outputChars[i] = applyConstantShifting(inputChars[i], shiftAmount, A_UPPER_CASE, Z_UPPER_CASE);
+        } else {
+            outputChars[i] = inputChars[i];
+        }
     }
 
     /**
